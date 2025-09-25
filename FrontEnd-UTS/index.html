@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -26,5 +26,108 @@
             </div>
         </div>
     </header>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jelajahi Papua Kita</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="main-nav">
+            <div class="container">
+                <span class="logo">Papua Kita</span>
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Cari adat, suku, kuliner...">
+                    <button id="searchButton">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="header-main" id="heroHeader">
+            <div class="header-content">
+                <h1>Jelajah Papua</h1>
+                <h2>Menggapai Mutiara dari Timur</h2>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="content-section suku-adat">
+            <div class="container">
+                <h2 class="section-title">Mengenal Suku Adat Papua</h2>
+                
+                <div class="content-row">
+                    <div class="content-image">
+                        <img src="assets/images/pakaian_adat/suku_dani.jpg" alt="Suku Dani dan Pakaian Adat">
+                    </div>
+                    <div class="content-text">
+                        <h3>Suku Dani</h3>
+                        <p>Suku Dani adalah salah satu suku terbesar yang mendiami Lembah Baliem, Pegunungan Tengah Papua. Pakaian adat pria yang paling ikonik adalah **koteka**, penutup alat vital yang terbuat dari buah labu. Sementara itu, wanita mengenakan **rok rumbai** yang dibuat dari serat rumput atau ilalang.</p>
+                    </div>
+                </div>
+
+                <div class="content-row reverse-row">
+                    <div class="content-image">
+                        <img src="assets/images/pakaian_adat/suku_asmat.jpg" alt="Suku Asmat dan Ukiran Khas">
+                    </div>
+                    <div class="content-text">
+                        <h3>Suku Asmat</h3>
+                        <p>Suku Asmat terkenal sebagai seniman ukir yang luar biasa, tinggal di wilayah pesisir selatan Papua. Pakaian adat mereka terbuat dari serat sagu atau kulit pohon, seringkali dihiasi dengan ukiran dan warna-warna alam. Ukiran dan patung Asmat sangat terkenal hingga mancanegara.</p>
+                    </div>
+                </div>
+
+                <div class="content-row">
+                    <div class="content-image">
+                        <img src="assets/images/pakaian_adat/suku_korawai.jpg" alt="Suku Korowai dan Rumah Pohon">
+                    </div>
+                    <div class="content-text">
+                        <h3>Suku Korowai</h3>
+                        <p>Dikenal dengan rumah pohonnya yang unik, Suku Korowai tinggal di daerah terpencil Papua. Pakaian mereka sangat sederhana, seringkali hanya menggunakan penutup tubuh dari daun atau serat pohon. Rumah pohon ini dibangun di atas pohon tinggi untuk menghindari serangan binatang buas dan serangga.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="content-section kuliner-khas">
+            <div class="container">
+                <h2 class="section-title">Kuliner Khas Papua</h2>
+                <div class="card-grid">
+                    <div class="food-card">
+                        <img src="assets/images/makanan/makanan_khas.jpg" alt="Papeda">
+                        <div class="card-content">
+                            <h3>Papeda</h3>
+                            <p>Makanan pokok dari sagu yang memiliki tekstur lengket. Biasanya disajikan dengan ikan kuah kuning yang kaya rempah.</p>
+                        </div>
+                    </div>
+                    <div class="food-card">
+                        <img src="assets/images/makanan/ikan_bakar_manokwari.jpg" alt="Ikan Bakar Manokwari">
+                        <div class="card-content">
+                            <h3>Ikan Bakar Manokwari</h3>
+                            <p>Ikan bakar dengan sambal khas yang pedas dan segar, cocok untuk para pecinta kuliner pedas.</p>
+                        </div>
+                    </div>
+                    <div class="food-card", onclick="klikMakanan()">
+                        <img src="assets\images\makanan\sagu_lempeng.png" alt="Sagu Lempeng">
+                        <div class="card-content">
+                            <h3>Sagu Lempeng</h3>
+                            <p>Kue kering berbahan dasar sagu yang dimasak dengan cara dipanggang. Makanan ringan yang cocok sebagai camilan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="assets\js\script.js"></script>
 </body>
 </html>
