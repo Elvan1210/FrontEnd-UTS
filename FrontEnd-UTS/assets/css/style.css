@@ -1,8 +1,98 @@
-/* Styling for the header, inspired by "Indonesia Kaya" */
-.header-main {
-    height: 1000px; /* Sesuaikan tingginya */
+/* Gaya Umum */
+body {
+    font-family: 'Poppins', sans-serif; /* Mengganti font utama */
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8; /* Warna latar belakang lebih lembut */
+    color: #212121;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Navigation & Search --- */
+.main-nav {
+    background-color: #ffffff; /* Latar belakang navigasi putih */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 1rem 0;
+    position: sticky; /* Membuat navigasi tetap di atas saat di-scroll */
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.main-nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
-    background-image: url('../images/pesona_alam/pesona_alam6.jpg'); /* Ganti dengan gambar yang kamu inginkan */
+    padding: 0 40px;
+}
+
+.logo {
+    font-family: 'Montserrat', sans-serif; /* Font logo berbeda */
+    font-size: 2.5rem; /* Ukuran font lebih proporsional */
+    font-weight: 700;
+    color: #004d40; /* Warna logo hijau gelap */
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e0e0e0;
+    border-radius: 50px; /* Membuat sudut lebih melengkung */
+    background-color: #f7f7f7;
+    transition: all 0.3s ease;
+}
+
+.search-container:focus-within {
+    border-color: #004d40;
+    box-shadow: 0 0 5px rgba(0, 77, 64, 0.3);
+}
+
+#searchInput {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #030202;
+    padding: 10px 20px;
+    width: 300px; /* Ukuran lebih proporsional */
+    font-size: 1rem;
+    transition: width 0.3s ease;
+}
+
+#searchInput::placeholder {
+    color: #a0a0a0;
+}
+
+#searchButton {
+    background-color: #004d40;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 0 50px 50px 0;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#searchButton:hover {
+    background-color: #00332b;
+}
+
+/* --- Hero Section --- */
+.header-main {
+    height: 75vh; /* Menggunakan vh agar tinggi menyesuaikan layar */
+    width: 100%;
+    background-image: url('../images/pesona_alam/pesona_alam6.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -11,79 +101,229 @@
     justify-content: center;
     text-align: center;
     color: white;
+    box-shadow: inset 0 -50px 50px rgba(0, 0, 0, 0.4);
 }
 
 .header-content {
-    background-color: rgba(0, 0, 0, 0.4); /* Overlay gelap agar teks lebih mudah dibaca */
-    padding: 20px 40px;
-    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px); /* Efek blur pada latar belakang overlay */
+    padding: 30px 60px;
+    border-radius: 15px;
+    transition: transform 0.5s ease;
+}
+
+.header-main:hover .header-content {
+    transform: scale(1.03);
 }
 
 .header-content h1 {
-    font-size: 5rem;
-    margin: 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    font-size: 4rem; /* Ukuran yang lebih seimbang */
+    margin: 0 0 10px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
 }
 
 .header-content h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin: 0;
-    font-weight: normal;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    font-weight: 500;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
 }
 
-/* Styling untuk Main Navigation (Menu & Search) */
-.main-nav {
-    background-color: #333; /* Warna gelap */
-    color: white;
-    padding: 15px 0;
+/* Styling untuk Section Konten */
+.content-section {
+    padding: 60px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #004d40;
     position: relative;
-    z-index: 1000;
+    padding-bottom: 10px;
 }
 
-.main-nav .container {
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #ffd700;
+    border-radius: 2px;
+}
+
+/* Tata Letak Gambar-Teks Bersebelahan */
+.content-row {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 40px;
+    margin-bottom: 60px;
 }
 
-.logo {
-    font-size: 3rem;
-    font-weight: bold;
+.content-row:last-of-type {
+    margin-bottom: 0;
 }
 
-.search-container {
-    display: flex;
-    align-items: center;
-    border: 1px solid #555;
-    border-radius: 20px;
-    background-color: #444;
+/* Mengubah urutan gambar dan teks */
+.content-row.reverse-row {
+    flex-direction: row-reverse;
 }
 
-#searchInput {
-    background-color: transparent;
-    border: none;
-    outline: none;
-    color: white;
-    padding: 8px 15px;
-    width: 400px;
+/* Opsi 2: Latar Belakang Gradien Halus */
+.content-section.suku-adat {
+    background: linear-gradient(180deg, #48c4a5 0%, #a9f0e4 100%); /* Gradien dari hijau ke putih */
+}
+
+.content-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.content-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.content-image img:hover {
+    transform: scale(1.02);
+}
+
+.content-text {
+    flex: 2;
+}
+
+.content-text h3 {
     font-size: 2rem;
+    color: #060808;
 }
 
-#searchInput::placeholder {
-    color: #bbb;
-}
-
-#searchButton {
-    background-color: transparent;
-    border: none;
-    color: white;
-    cursor: pointer;
-    padding: 8px 15px;
+.content-text p {
     font-size: 1rem;
-    transition: color 0.3s;
+    line-height: 1.8;
+    color: #000000;
 }
 
-#searchButton:hover {
-    color: #ffd700;
+/* Styling untuk Section Kuliner */
+.content-section.kuliner-khas {
+    background-color: #fffaf0; /* Warna krem lembut untuk bagian kuliner */
+}
+
+/* Tata Letak Kartu (Cards) */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.food-card {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.food-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.food-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    color: #004d40;
+}
+
+.card-content p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Responsiveness untuk Content */
+@media (max-width: 992px) {
+    .content-row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .content-row.reverse-row {
+        flex-direction: column;
+    }
+
+    .content-image, .content-text {
+        min-width: unset;
+        width: 100%;
+    }
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+    .logo {
+        font-size: 2rem;
+    }
+
+    #searchInput {
+        width: 250px;
+        font-size: 0.9rem;
+    }
+
+    .header-content h1 {
+        font-size: 3rem;
+    }
+
+    .header-content h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-nav .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .search-container {
+        width: 100%;
+        border-radius: 50px;
+    }
+
+    #searchInput {
+        width: 100%;
+    }
+
+    #searchButton {
+        padding: 10px 15px;
+        border-radius: 0 50px 50px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .header-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .header-content {
+        padding: 20px 30px;
+    }
 }
