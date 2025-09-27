@@ -34,10 +34,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jelajahi Papua Kita</title>
+    <!-- Link untuk Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Link Font Awesome untuk ikon pencarian -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Link ke file CSS milikmu -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -62,20 +65,23 @@
     </header>
 
     <main>
+        <!-- Section: Suku Adat Papua -->
         <section class="content-section suku-adat">
             <div class="container">
                 <h2 class="section-title">Mengenal Suku Adat Papua</h2>
                 
+                <!-- Item Suku 1: Suku Dani -->
                 <div class="content-row">
                     <div class="content-image">
                         <img src="assets/images/pakaian_adat/suku_dani.jpg" alt="Suku Dani dan Pakaian Adat">
                     </div>
                     <div class="content-text">
                         <h3>Suku Dani</h3>
-                        <p>Suku Dani adalah salah satu suku terbesar yang mendiami Lembah Baliem, Pegunungan Tengah Papua. Pakaian adat pria yang paling ikonik adalah **koteka**, penutup alat vital yang terbuat dari buah labu. Sementara itu, wanita mengenakan **rok rumbai** yang dibuat dari serat rumput atau ilalang.</p>
+                        <p>Suku Dani adalah salah satu suku terbesar yang mendiami Lembah Baliem, Pegunungan Tengah Papua. Pakaian adat pria yang paling ikonik adalah *koteka, penutup alat vital yang terbuat dari buah labu. Sementara itu, wanita mengenakan **rok rumbai* yang dibuat dari serat rumput atau ilalang.</p>
                     </div>
                 </div>
 
+                <!-- Item Suku 2: Suku Asmat -->
                 <div class="content-row reverse-row">
                     <div class="content-image">
                         <img src="assets/images/pakaian_adat/suku_asmat.jpg" alt="Suku Asmat dan Ukiran Khas">
@@ -86,6 +92,7 @@
                     </div>
                 </div>
 
+                <!-- Item Suku 3: Suku Korowai -->
                 <div class="content-row">
                     <div class="content-image">
                         <img src="assets/images/pakaian_adat/suku_korawai.jpg" alt="Suku Korowai dan Rumah Pohon">
@@ -99,26 +106,69 @@
             </div>
         </section>
 
+        <section class="content-section rumah-adat">
+            <div class="container">
+                <h2 class="section-title">Rumah Adat Papua</h2>
+                
+                <!-- Item Rumah Adat 1: Honai -->
+                <div class="content-row">
+                    <div class="content-image">
+                        <img src="assets/images/rumah_adat/honai.jpg" alt="Rumah Adat Honai">
+                    </div>
+                    <div class="content-text">
+                        <h3>Honai</h3>
+                        <p>Rumah adat Honai khas dari suku Dani dan Lani. Berbentuk bundar dan terbuat dari kayu dengan atap jerami, rumah ini didesain untuk menjaga kehangatan di daerah pegunungan yang dingin.</p>
+                    </div>
+                </div>
+
+                <!-- Item Rumah Adat 2: Kariwari -->
+                <div class="content-row reverse-row">
+                    <div class="content-image">
+                        <img src="assets/images/rumah_adat/kariwari.jpg" alt="Rumah Adat Kariwari">
+                    </div>
+                    <div class="content-text">
+                        <h3>Kariwari</h3>
+                        <p>Rumah adat Suku Tobati dan Enggros. Berbentuk limas segi delapan, rumah ini digunakan sebagai tempat belajar dan upacara adat bagi para pemuda.</p>
+                    </div>
+                </div>
+
+                <!-- Item Rumah Adat 3: Jew -->
+                <div class="content-row">
+                    <div class="content-image">
+                        <img src="assets/images/rumah_adat/jew.jpg" alt="Rumah Adat Jew">
+                    </div>
+                    <div class="content-text">
+                        <h3>Jew</h3>
+                        <p>Rumah bujang Suku Asmat. Berbentuk perahu yang panjang, rumah ini adalah pusat kegiatan sosial dan upacara adat bagi kaum pria di suku tersebut.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Kuliner Khas Papua -->
         <section class="content-section kuliner-khas">
             <div class="container">
                 <h2 class="section-title">Kuliner Khas Papua</h2>
                 <div class="card-grid">
-                    <div class="food-card">
+                    <!-- Kartu Makanan: Papeda -->
+                    <div class="food-card" data-recipe="papeda">
                         <img src="assets/images/makanan/makanan_khas.jpg" alt="Papeda">
                         <div class="card-content">
                             <h3>Papeda</h3>
                             <p>Makanan pokok dari sagu yang memiliki tekstur lengket. Biasanya disajikan dengan ikan kuah kuning yang kaya rempah.</p>
                         </div>
                     </div>
-                    <div class="food-card">
+                    <!-- Kartu Makanan: Ikan Bakar Manokwari -->
+                    <div class="food-card" data-recipe="ikan-bakar">
                         <img src="assets/images/makanan/ikan_bakar_manokwari.jpg" alt="Ikan Bakar Manokwari">
                         <div class="card-content">
                             <h3>Ikan Bakar Manokwari</h3>
                             <p>Ikan bakar dengan sambal khas yang pedas dan segar, cocok untuk para pecinta kuliner pedas.</p>
                         </div>
                     </div>
-                    <div class="food-card", onclick="klikMakanan()">
-                        <img src="assets\images\makanan\sagu_lempeng.png" alt="Sagu Lempeng">
+                    <!-- Kartu Makanan: Sagu Lempeng -->
+                    <div class="food-card" data-recipe="sagu-lempeng">
+                        <img src="assets/images/makanan/sagu_lempeng.png" alt="Sagu Lempeng">
                         <div class="card-content">
                             <h3>Sagu Lempeng</h3>
                             <p>Kue kering berbahan dasar sagu yang dimasak dengan cara dipanggang. Makanan ringan yang cocok sebagai camilan.</p>
@@ -127,7 +177,80 @@
                 </div>
             </div>
         </section>
+
+        <!-- Section: Rumah Adat Papua -->
+
+        <section class="content-section fauna-khas">
+    <div class="container">
+        <h2 class="section-title">Fauna Khas Papua</h2>
+        <p class="section-subtitle">Pilih salah satu hewan dari daftar untuk melihat deskripsinya.</p>
+
+        <div class="fauna-interactive-container">
+            <div class="fauna-list">
+                
+                <div class="fauna-list-item" data-fauna="cenderawasih">
+                    <img src="assets/images/hewan/cenderawasih.jpg" alt="Burung Cenderawasih">
+                    <div class="item-info">
+                        <h3>Burung Cenderawasih</h3>
+                        <p>Si Burung Surga</p>
+                    </div>
+                    <div class="fauna-hidden-description">
+                        <h2>Burung Cenderawasih</h2>
+                        <p>Dikenal sebagai "Bird of Paradise", Cenderawasih adalah ikon fauna Papua. Burung ini memiliki bulu yang sangat indah dan berwarna-warni, yang digunakan oleh pejantan untuk menarik perhatian betina saat musim kawin. Keindahannya menjadikannya salah satu burung paling terkenal di dunia.</p>
+                    </div>
+                </div>
+
+                <div class="fauna-list-item" data-fauna="kasuari">
+                    <img src="assets/images/hewan/kasuari.jpg" alt="Burung Kasuari">
+                    <div class="item-info">
+                        <h3>Kasuari</h3>
+                        <p>Burung Darat Raksasa</p>
+                    </div>
+                    <div class="fauna-hidden-description">
+                        <h2>Kasuari</h2>
+                        <p>Kasuari adalah salah satu burung terbesar di dunia yang tidak bisa terbang. Dikenal dengan tanduk (casque) di atas kepalanya dan cakar yang sangat tajam, kasuari adalah hewan yang kuat dan berperan penting dalam menyebarkan biji-bijian di dalam hutan.</p>
+                    </div>
+                </div>
+
+                <div class="fauna-list-item" data-fauna="kanguru_pohon">
+                    <img src="assets/images/hewan/kanguru_pohon.jpg" alt="Kanguru Pohon">
+                    <div class="item-info">
+                        <h3>Kanguru Pohon</h3>
+                        <p>Marsupial Pemanjat Ulung</p>
+                    </div>
+                    <div class="fauna-hidden-description">
+                        <h2>Kanguru Pohon</h2>
+                        <p>Berbeda dari kanguru Australia, Kanguru Pohon adalah marsupial yang menghabiskan sebagian besar hidupnya di atas pohon. Mereka memiliki cakar yang kuat dan ekor panjang untuk keseimbangan saat memanjat. Hewan unik ini adalah mamalia endemik yang menakjubkan dari hutan Papua.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="fauna-display" class="fauna-description-display">
+                <div class="placeholder">
+                    <i class="fas fa-paw"></i>
+                    <h3>Lihat Detail Hewan</h3>
+                    <p>Silakan pilih hewan dari daftar di sebelah kiri.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        
+        <div id="recipeModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2 id="modalTitle">Judul Resep</h2>
+                <div id="modalBody">
+                    <h4>Bahan-bahan:</h4>
+                    <ul id="modalIngredients"></ul>
+                    <h4>Cara Membuat:</h4>
+                    <ol id="modalInstructions"></ol>
+                </div>
+            </div>
+        </div>
+        
     </main>
-    <script src="assets\js\script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
