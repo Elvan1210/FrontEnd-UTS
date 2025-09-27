@@ -173,9 +173,9 @@ body {
     flex-direction: row-reverse;
 }
 
-/* Opsi 2: Latar Belakang Gradien Halus */
+/* Latar belakang section Suku Adat dengan gradien */
 .content-section.suku-adat {
-    background: linear-gradient(180deg, #48c4a5 0%, #a9f0e4 100%); /* Gradien dari hijau ke putih */
+    background: linear-gradient(180deg, #48c4a5 0%, #a9f0e4 100%);
 }
 
 .content-image {
@@ -212,7 +212,7 @@ body {
 
 /* Styling untuk Section Kuliner */
 .content-section.kuliner-khas {
-    background-color: #fffaf0; /* Warna krem lembut untuk bagian kuliner */
+    background-color: #fffaf0; /* Warna krem lembut */
 }
 
 /* Tata Letak Kartu (Cards) */
@@ -228,6 +228,7 @@ body {
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
 .food-card:hover {
@@ -254,6 +255,11 @@ body {
 .card-content p {
     font-size: 0.9rem;
     line-height: 1.6;
+}
+
+/* Latar belakang section Rumah Adat dengan gradien baru */
+.content-section.rumah-adat {
+    background: linear-gradient(180deg, #fceec5 0%, #ffffff 100%); /* Gradien kuning ke putih, terinspirasi dari warna tanah */
 }
 
 /* Responsiveness untuk Content */
@@ -326,4 +332,246 @@ body {
     .header-content {
         padding: 20px 30px;
     }
+}
+
+.modal {
+    display: none; /* Modal disembunyikan secara default */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6); /* Latar belakang gelap transparan */
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 10% auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 700px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: slide-down 0.5s ease-out;
+}
+
+@keyframes slide-down {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modalTitle {
+    color: #004d40;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+#modalBody h4 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#modalBody ul, #modalBody ol {
+    padding-left: 20px;
+    line-height: 1.8;
+}
+
+/* Membuat kartu makanan dapat diklik */
+.food-card {
+    cursor: pointer;
+}
+
+.suku-adat .content-text {
+    background-color: rgba(255, 255, 255, 0.5); /* Latar belakang putih semi-transparan */
+    backdrop-filter: blur(10px); /* Memberi efek kaca buram (frosted glass) */
+    padding: 30px;
+    border-radius: 50px; /* Sudut melengkung, sama seperti gambar */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Bayangan halus untuk efek 3D */
+    border: 1px solid rgba(255, 255, 255, 0.7); /* Garis batas (border) tipis */
+}
+
+/* === Gaya KHUSUS untuk Section Rumah Adat === */
+
+/* Style utama untuk setiap baris konten di dalam section .rumah-adat */
+.rumah-adat .content-row {
+    background-color: #ffffff; /* Warna latar belakang box menjadi putih */
+    border-radius: 20px;       /* Membuat sudut box menjadi tumpul/rounded */
+    padding: 24px;             /* Memberi jarak antara konten dengan tepi box */
+    margin-bottom: 30px;       /* Memberi jarak antar box */
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Menambahkan bayangan halus */
+    overflow: hidden;          /* Memastikan gambar tidak keluar dari box */
+}
+
+/* Style untuk membalik urutan (gambar di kanan, teks di kiri) */
+.rumah-adat .reverse-row {
+    flex-direction: row-reverse;
+}
+
+/* Mengatur ukuran kolom gambar dan teks */
+.rumah-adat .content-image {
+    flex: 1;
+    min-width: 200px;
+}
+
+.rumah-adat .content-text {
+    flex: 1.5; /* Membuat kolom teks sedikit lebih lebar dari kolom gambar */
+}
+
+/* Style untuk gambar di dalam box */
+.rumah-adat .content-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px; /* Sudut gambar juga dibuat tumpul */
+    display: block;
+}
+
+/* Style untuk judul di dalam box */
+.rumah-adat .content-text h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+}
+
+/* Style untuk paragraf di dalam box */
+.rumah-adat .content-text p {
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
+/* === Gaya untuk Section Fauna Khas (Versi Interaktif) === */
+
+.fauna-khas .section-subtitle {
+    text-align: center;
+    margin-top: -20px;
+    margin-bottom: 40px;
+    color: #555;
+    font-family: 'Poppins', sans-serif;
+}
+
+.fauna-interactive-container {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+/* Kolom Daftar Hewan (Kiri) */
+.fauna-list {
+    flex: 1; /* Lebar 1/3 dari kontainer */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.fauna-list-item {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px; /* Diperbesar dari 15px */
+    border-radius: 16px; /* Sudut lebih tumpul */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.fauna-list-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    border-color: #ffd700;
+}
+
+.fauna-list-item img {
+    width: 100px; /* Diperbesar dari 80px */
+    height: 100px; /* Diperbesar dari 80px */
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 25px; /* Jarak lebih besar dari 20px */
+}
+
+.fauna-list-item h3 {
+    margin: 0;
+    font-size: 1.5rem; /* Diperbesar dari 1.2rem */
+}
+
+.fauna-list-item p {
+    margin: 0;
+    font-size: 1rem; /* Diperbesar dari 0.9rem */
+    color: #666;
+}
+
+.fauna-description-display h2 {
+    margin-top: 0;
+    font-size: 2.2rem;
+    color: #004d40;
+}
+
+.fauna-description-display p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+/* Sembunyikan blok deskripsi asli */
+.fauna-hidden-description {
+    display: none;
+}
+
+
+/* Kolom Deskripsi (Kanan) */
+.fauna-description-display {
+    flex: 2; /* Lebar 2/3 dari kontainer */
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    min-height: 400px;
+    position: sticky; /* Membuatnya tetap di layar saat di-scroll */
+    top: 120px;
+}
+
+.fauna-description-display .placeholder {
+    text-align: center;
+    color: #aaa;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fauna-description-display .placeholder .fas {
+    font-size: 4rem;
+    margin-bottom: 20px;
 }
