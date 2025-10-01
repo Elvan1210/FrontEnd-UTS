@@ -92,7 +92,7 @@ body {
 .header-main {
     height: 75vh;
     width: 100%;
-    background-image: url('../images/ondel/kota_tua.jpg');
+    background-image: url('../images/ondel/pexels-tomfisk-2297483.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -164,13 +164,14 @@ body {
     color: #555;
     font-family: 'Poppins', sans-serif;
 }
-/* Style untuk grid kesenian */
+
+/* --- Style untuk grid kesenian diubah ke flexbox --- */
 .kesenian-grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
     gap: 30px;
     padding: 20px;
-    justify-content: center;
 }
 .kesenian-card {
     display: flex;
@@ -183,6 +184,7 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    width: 280px; 
 }
 .kesenian-card:hover {
     transform: translateY(-5px);
@@ -206,47 +208,83 @@ body {
     margin: 0;
 }
 
-/* Style baru untuk grid rumah adat */
+/* --- [PERUBAHAN] Gaya Baru untuk Section Rumah Adat diubah ke flexbox --- */
 .rumah-adat-grid-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    padding: 20px;
+    display: flex; /* Mengubah dari grid ke flexbox */
+    flex-wrap: wrap; /* Memungkinkan item turun ke baris baru */
+    justify-content: center; /* Menengahkan semua item di setiap baris */
+    gap: 35px;
+    padding: 20px 0;
 }
+
+/* Kartu Rumah Adat yang telah didesain ulang sepenuhnya */
 .rumah-adat-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 25px;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    height: 420px;
+    border-radius: 15px;
+    overflow: hidden;
     cursor: pointer;
-    width: 320px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    display: flex;
+    align-items: flex-end;
+    flex-basis: 320px; /* --- [TAMBAHAN] Memberi ukuran dasar pada kartu --- */
 }
+
 .rumah-adat-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(-10px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
 }
-.rumah-adat-card img {
+
+.rumah-adat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 270px; 
-    object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 15px;
-    border: 3px solid #ff9900;
-    transition: transform 0.3s ease;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 10%, rgba(0, 0, 0, 0) 70%);
+    opacity: 1;
+    transition: opacity 0.4s ease;
 }
-.rumah-adat-card:hover img {
-    transform: scale(1.05);
+
+.card-content-ra {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+    padding: 25px;
+    width: 100%;
+    transition: transform 0.4s ease;
 }
-.rumah-adat-card h3 {
-    font-size: 1.5rem;
-    color: #ff9900;
+
+.card-title-ra {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.card-desc-ra {
+    font-size: 0.95rem;
+    line-height: 1.6;
     margin: 0;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease, margin-top 0.4s ease;
+}
+
+.rumah-adat-card:hover .card-content-ra {
+    transform: translateY(-15px);
+}
+
+.rumah-adat-card:hover .card-desc-ra {
+    max-height: 100px;
+    opacity: 1;
+    margin-top: 10px;
 }
 
 /* Styling untuk Section Kuliner */
@@ -262,18 +300,18 @@ body {
     max-width: 900px;
     margin: 0 auto;
 }
-/* Wrapper utama yang memiliki overflow hidden */
+
 .kuliner-slider-container {
     width: 100%;
     overflow: hidden;
 }
-/* Daftar kartu yang akan digeser */
+
 .kuliner-card-list {
     display: flex;
     transition: transform 0.5s ease-in-out;
     justify-content: flex-start;
 }
-/* Style untuk setiap kartu makanan */
+
 .food-card {
     min-width: 300px;
     max-width: 300px;
@@ -304,7 +342,7 @@ body {
     font-size: 0.9rem;
     line-height: 1.6;
 }
-/* Kelas aktif untuk kartu di tengah */
+
 .food-card.active {
     min-width: 400px;
     max-width: 400px;
@@ -312,7 +350,7 @@ body {
     filter: none;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
-/* Tombol navigasi slider */
+
 .nav-btn {
     background-color: rgba(0, 77, 64, 0.8);
     color: white;
@@ -332,7 +370,7 @@ body {
 .nav-btn:hover {
     background-color: rgba(0, 77, 64, 1);
 }
-/* Container untuk dot indikator */
+
 .kuliner-dots-container {
     display: flex;
     justify-content: center;
@@ -351,11 +389,11 @@ body {
     background-color: #004d40;
 }
 
-/* Latar belakang section Rumah Adat dengan gradien baru */
+
 .content-section.rumah-adat {
     background: linear-gradient(180deg, #fceec5 0%, #ffffff 100%);
 }
-/* Style untuk modal */
+
 .modal {
     display: none;
     position: fixed;
@@ -408,7 +446,7 @@ body {
     color: #000;
 }
 
-/* Gaya untuk Kesenian Modal */
+
 #kesenianModal .modal-content {
     display: flex;
     flex-direction: column;
@@ -428,7 +466,7 @@ body {
     line-height: 1.8;
 }
 
-/* Gaya untuk Rumah Adat Modal */
+
 #rumahAdatModal .modal-content {
     display: flex;
     flex-direction: column;
@@ -436,25 +474,32 @@ body {
     text-align: center;
 }
 #rumahAdatModal .modal-image {
-    border: 3px solid #ff9900;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+#rumahAdatModal .modal-image:hover {
+    transform: scale(1.02);
 }
 #rumahAdatModal h2 {
-    color: #ff9900;
+    color: #004d40;
     font-size: 2.5rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 #rumahAdatModal p {
     font-size: 1rem;
     line-height: 1.8;
+    color: #333333;
 }
 
-/* --- Gaya untuk Section Alat Musik (Interaktif) --- */
+
 .musik-interactive-container {
     display: flex;
     gap: 30px;
     align-items: flex-start;
 }
 
-/* Kolom Daftar Alat Musik (Kiri) */
+
 .musik-list {
     flex: 1;
     display: flex;
@@ -514,13 +559,13 @@ body {
     font-size: 1.1rem;
     line-height: 1.8;
 }
-/* Sembunyikan blok deskripsi asli */
+
 .musik-hidden-description {
     display: none;
 }
 
 
-/* Kolom Deskripsi (Kanan) */
+
 .musik-description-display {
     flex: 2;
     background-color: #fff;
@@ -547,22 +592,22 @@ body {
     margin-bottom: 20px;
 }
 
-/* Style untuk menyorot hasil pencarian */
+
 .highlight {
     box-shadow: 0 0 20px 8px rgba(0, 77, 64, 0.5);
     transform: translateY(-10px);
     transition: all 0.4s ease-in-out;
 }
 
-/* --- Gaya untuk Filter Navigasi --- */
+
 .nav-controls {
     display: flex;
     align-items: center;
-    gap: 15px; /* Jarak antara filter dan search bar */
+    gap: 15px; 
 }
 
 .filter-container {
-    position: relative; /* Penting untuk posisi dropdown */
+    position: relative; 
     display: inline-block;
 }
 
@@ -587,7 +632,7 @@ body {
 }
 
 .filter-dropdown-content {
-    display: none; /* Sembunyi secara default */
+    display: none; 
     position: absolute;
     background-color: #ffffff;
     min-width: 240px;
@@ -618,7 +663,7 @@ body {
     background-color: #f1f1f1;
 }
 
-/* Kelas untuk menampilkan dropdown via JS */
+
 .filter-dropdown-content.show {
     display: block;
 }
@@ -631,19 +676,17 @@ footer {
     padding: 15px;
 }
 
-/* --- [TAMBAHAN] Gaya Background Section yang Dinamis --- */
 
-/* Aturan dasar untuk setiap section dengan background gambar */
 .background-section {
-    position: relative; /* Diperlukan untuk lapisan overlay */
+    position: relative; 
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Ini yang menciptakan efek parallax! */
-    padding: 80px 0; /* Beri padding lebih agar gambar terlihat */
-    color: #ffffff; /* Ubah warna teks default di section ini menjadi putih */
+    background-attachment: fixed; 
+    padding: 80px 0; 
+    color: #ffffff; 
 }
 
-/* Lapisan overlay gelap transparan */
+
 .background-section::before {
     content: '';
     position: absolute;
@@ -651,51 +694,51 @@ footer {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)); /* Gradien gelap */
-    z-index: 1; /* Lapisan ini ada di paling belakang konten */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)); 
+    z-index: 1; 
 }
 
-/* Pastikan konten (judul, kartu, dll.) berada di atas lapisan overlay */
+
 .background-section .container {
     position: relative;
     z-index: 2;
 }
 
-/* Ubah warna judul section agar terlihat di background gelap */
+
 .background-section .section-title,
 .background-section .section-subtitle {
     color: #ffffff;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Tambah bayangan agar lebih terbaca */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); 
 }
 
 .background-section .section-title::after {
-    background-color: #ffd700; /* Warna kuning emas untuk garis bawah judul */
+    background-color: #ffd700; 
 }
 
 
-/* --- Menentukan gambar untuk setiap section --- */
+
 #kesenian.background-section {
-    background-image: url('../images/kesenian/Tarian-Betawi.jpg');
+    background-image: url('../images/kesenian/ondel_ondel_bg.jpg');
 }
 
 #rumah-adat.background-section {
-    background-image: url('../images/rumah_adat/rmh-betawi.JPG');
-    /* Hapus background gradien lama agar tidak bentrok */
+    background-image: url('../images/rumah_adat/rumah_adat_bg.jpg');
+
 }
 
 #kuliner.background-section {
-    background-image: url('../images/kuliner/kerak_telor.jpg');
-    /* Hapus warna background lama */
+    background-image: url('../images/kuliner/close-up-high-protein-soup-meal.jpg');
+
     background-color: transparent;
 }
 
 #alat-musik.background-section {
-    background-image: url('../images/alat_musik/gambang.jpg');
+    background-image: url('../images/alat_musik/gendang_bg.jpg');
 }
 
-/* --- [PERBAIKAN] Mengembalikan Warna Teks Deskripsi Alat Musik --- */
+
 #alat-musik .musik-description-display {
-    color: #212121; /* Mengembalikan warna teks di dalam kotak deskripsi menjadi gelap */
+    color: #212121; 
 }
 
 #kuliner .food-card .card-content h3 {
@@ -706,11 +749,10 @@ footer {
     color: #212121;
 }
 
-/* --- [BARU] Footer Profesional --- */
 
 .site-footer {
-    background-color: #002b24; /* Warna hijau yang sangat gelap, serasi dengan tema */
-    color: #a0b2af; /* Warna teks abu-abu terang agar nyaman dibaca */
+    background-color: #002b24; 
+    color: #a0b2af; 
     padding: 60px 0 0 0;
     font-size: 0.95rem;
     line-height: 1.8;
@@ -718,9 +760,9 @@ footer {
 
 .footer-grid {
     display: grid;
-    /* Membuat layout responsif: 4 kolom di layar besar, dan akan menyesuaikan di layar kecil */
+
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 40px; /* Jarak antar kolom */
+    gap: 40px; 
     margin-bottom: 40px;
 }
 
@@ -751,11 +793,11 @@ footer {
 }
 
 .footer-column.links ul li a:hover {
-    color: #ffd700; /* Warna aksen emas saat disentuh */
+    color: #ffd700; 
     transform: translateX(5px);
 }
 
-/* Gaya untuk link sosial media */
+
 .social-links a {
     display: inline-flex;
     justify-content: center;
@@ -772,11 +814,11 @@ footer {
 }
 
 .social-links a:hover {
-    background-color: #004d40; /* Warna utama situs */
+    background-color: #004d40; 
     transform: translateY(-3px);
 }
 
-/* Gaya untuk form langganan */
+
 .subscribe-form {
     display: flex;
     margin-top: 10px;
@@ -811,7 +853,7 @@ footer {
     background-color: #006a5a;
 }
 
-/* Bagian paling bawah footer (copyright) */
+
 .footer-bottom {
     text-align: center;
     padding: 20px 0;
@@ -825,4 +867,122 @@ footer {
 }
 .item-info h3 {
     color :#004d40;
+}
+
+.page-header {
+    background-color: #ffffff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid #f0f0f0;
+}
+.page-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+.page-nav a {
+    color: #333;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.page-nav a:hover {
+    color: #004d40;
+}
+.page-nav a.active {
+    color: #004d40;
+    font-weight: 700;
+}
+
+/* Hero Section Halaman About */
+.about-hero {
+    background-color: #002b24;
+    color: #ffffff;
+    text-align: center;
+    padding: 60px 20px;
+}
+.about-hero h1 {
+    font-size: 3rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.about-hero p {
+    font-size: 1.1rem;
+    color: #a0b2af;
+    margin-top: 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Konten Utama Halaman About */
+.about-content {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.about-section {
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+    text-align: center;
+}
+.about-icon {
+    font-size: 2.5rem;
+    color: #004d40;
+    margin-bottom: 20px;
+}
+.about-section h2 {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+}
+.about-section p {
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Gaya untuk Bagian Tim */
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+.team-member-card {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 12px;
+    width: 300px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee;
+}
+.team-member-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #004d40;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    font-size: 3rem;
+}
+.team-member-card h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+}
+.team-member-card .role {
+    font-weight: 700;
+    color: #004d40;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+.team-member-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
 }

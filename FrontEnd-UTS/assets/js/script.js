@@ -124,15 +124,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function renderRumahAdat() {
         rumahAdatData.forEach((item, index) => {
+            // Membuat elemen kartu utama
             const card = document.createElement('div');
             card.className = 'rumah-adat-card';
             card.setAttribute('data-index', index);
-            card.innerHTML = `
-                <img src="${item.image}" alt="${item.title}">
-                <h3>${item.title}</h3>
+            // Mengatur gambar sebagai background kartu
+            card.style.backgroundImage = `url('${item.image}')`;
+
+            // Membuat container untuk konten teks di dalam kartu
+            const content = document.createElement('div');
+            content.className = 'card-content-ra';
+
+            // Membuat deskripsi singkat (mengambil kalimat pertama dari deskripsi lengkap)
+            const shortDesc = item.description.split('. ')[0] + '.';
+
+            // Mengisi konten dengan judul dan deskripsi singkat
+            content.innerHTML = `
+                <h3 class="card-title-ra">${item.title}</h3>
+                <p class="card-desc-ra">${shortDesc}</p>
             `;
+            
+            // Memasukkan konten ke dalam kartu
+            card.appendChild(content);
+            
+            // Memasukkan kartu yang sudah jadi ke dalam grid container
             rumahAdatGridContainer.appendChild(card);
 
+            // Menambahkan event listener untuk membuka modal (logika ini tetap sama)
             card.addEventListener('click', () => {
                 rumahAdatImage.src = item.image;
                 rumahAdatImage.alt = item.title;
@@ -147,6 +165,7 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('click', (event) => {
         if (event.target === rumahAdatModal) { rumahAdatModal.style.display = 'none'; }
     });
+
 
     // --- Data Resep Makanan ---
     const recipes = {
@@ -420,4 +439,12 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     });
+
+    const subscribeForm = document.querySelector('.subscribe-form');
+    subscribeForm.addEventListener('submit', function(event) {
+        event.preventDefault(); 
+        const emailInput = subscribeForm.querySelector('input[type="email"]');
+        alert('Terima kasih telah berlangganan!');
+        emailInput.value = ''; 
+});
 });
