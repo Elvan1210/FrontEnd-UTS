@@ -622,3 +622,207 @@ body {
 .filter-dropdown-content.show {
     display: block;
 }
+
+footer {
+    text-align: center;
+    font-size: 2rem;
+    background-color: #2B0B93;
+    color: white;
+    padding: 15px;
+}
+
+/* --- [TAMBAHAN] Gaya Background Section yang Dinamis --- */
+
+/* Aturan dasar untuk setiap section dengan background gambar */
+.background-section {
+    position: relative; /* Diperlukan untuk lapisan overlay */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Ini yang menciptakan efek parallax! */
+    padding: 80px 0; /* Beri padding lebih agar gambar terlihat */
+    color: #ffffff; /* Ubah warna teks default di section ini menjadi putih */
+}
+
+/* Lapisan overlay gelap transparan */
+.background-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)); /* Gradien gelap */
+    z-index: 1; /* Lapisan ini ada di paling belakang konten */
+}
+
+/* Pastikan konten (judul, kartu, dll.) berada di atas lapisan overlay */
+.background-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Ubah warna judul section agar terlihat di background gelap */
+.background-section .section-title,
+.background-section .section-subtitle {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Tambah bayangan agar lebih terbaca */
+}
+
+.background-section .section-title::after {
+    background-color: #ffd700; /* Warna kuning emas untuk garis bawah judul */
+}
+
+
+/* --- Menentukan gambar untuk setiap section --- */
+#kesenian.background-section {
+    background-image: url('../images/kesenian/Tarian-Betawi.jpg');
+}
+
+#rumah-adat.background-section {
+    background-image: url('../images/rumah_adat/rmh-betawi.JPG');
+    /* Hapus background gradien lama agar tidak bentrok */
+}
+
+#kuliner.background-section {
+    background-image: url('../images/kuliner/kerak_telor.jpg');
+    /* Hapus warna background lama */
+    background-color: transparent;
+}
+
+#alat-musik.background-section {
+    background-image: url('../images/alat_musik/gambang.jpg');
+}
+
+/* --- [PERBAIKAN] Mengembalikan Warna Teks Deskripsi Alat Musik --- */
+#alat-musik .musik-description-display {
+    color: #212121; /* Mengembalikan warna teks di dalam kotak deskripsi menjadi gelap */
+}
+
+#kuliner .food-card .card-content h3 {
+    color: #004d40;
+}
+
+#kuliner .food-card .card-content p {
+    color: #212121;
+}
+
+/* --- [BARU] Footer Profesional --- */
+
+.site-footer {
+    background-color: #002b24; /* Warna hijau yang sangat gelap, serasi dengan tema */
+    color: #a0b2af; /* Warna teks abu-abu terang agar nyaman dibaca */
+    padding: 60px 0 0 0;
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.footer-grid {
+    display: grid;
+    /* Membuat layout responsif: 4 kolom di layar besar, dan akan menyesuaikan di layar kecil */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px; /* Jarak antar kolom */
+    margin-bottom: 40px;
+}
+
+.footer-column h4, .footer-column .footer-logo {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-column.about p {
+    margin-bottom: 25px;
+}
+
+.footer-column.links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column.links ul li a {
+    color: #a0b2af;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.footer-column.links ul li a:hover {
+    color: #ffd700; /* Warna aksen emas saat disentuh */
+    transform: translateX(5px);
+}
+
+/* Gaya untuk link sosial media */
+.social-links a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: #004d40; /* Warna utama situs */
+    transform: translateY(-3px);
+}
+
+/* Gaya untuk form langganan */
+.subscribe-form {
+    display: flex;
+    margin-top: 10px;
+}
+
+.subscribe-form input {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 50px 0 0 50px;
+    color: #ffffff;
+    outline: none;
+}
+
+.subscribe-form input::placeholder {
+    color: #a0b2af;
+}
+
+.subscribe-form button {
+    padding: 12px 20px;
+    border: none;
+    background-color: #004d40;
+    color: #ffffff;
+    border-radius: 0 50px 50px 0;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.subscribe-form button:hover {
+    background-color: #006a5a;
+}
+
+/* Bagian paling bawah footer (copyright) */
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+.item-info h3 {
+    color :#004d40;
+}

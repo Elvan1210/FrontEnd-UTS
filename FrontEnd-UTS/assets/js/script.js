@@ -392,7 +392,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Tampilkan/sembunyikan dropdown saat tombol di-klik
     filterButton.addEventListener('click', (event) => {
-        event.stopPropagation(); // Mencegah window.onclick berjalan saat tombol diklik
+        event.stopPropagation();
         filterDropdown.classList.toggle('show');
     });
 
